@@ -1,11 +1,11 @@
 function expandedForm(num) {
-  let str = num.toString();  // число в строку
+  let str = num.toString();  
   
-  let result = []; // разбиение на массив символов
+  let result = []; 
   
   for(let i=0; i<str.length; i++)
     {
-      if (str[i] !== '0')    // вычисление разряда
+      if (str[i] !== '0') 
         {
           let zeros = str.length - 1 -i;
           
@@ -15,6 +15,6 @@ function expandedForm(num) {
         }
     }
   
-  return result.join(' + ');   // сборка черезе +
+  return result.join(' + ');  
   // Your code here
 }
