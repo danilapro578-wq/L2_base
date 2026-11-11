@@ -1,11 +1,13 @@
-function createPhoneNumber(numbers){
+function findMissing(list) {  
   
-  let code = numbers.slice(0,3).join(''); 
+  let step = (list[list.length - 1] - list[0]) / list.length;
   
-  let centralPart = numbers.slice(3,6).join('');   
-  
-  let lastPart =numbers.slice (6,10).join('');   
-  
-  return `(${code}) ${centralPart}-${lastPart}`;
+  for (let i = 0; i<list.length - 1;i++)
+    {
+      if(list[i+1] - list[i] !== step)
+        {
+          return list[i] + step;
+        }
+    }
   
 }
