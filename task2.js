@@ -8,11 +8,11 @@ function ipv4Parser(ip, mask){
   let hostParts = [];
   
   for (let i=0; i<4; i++)
-    { // побитовое (И) для сети
+    {
       let net = ipParts[i] & subnetParts[i];
       networkParts.push(net);
       
-      let host = ipParts[i] ^ net; // Исходная часть - сеть
+      let host = ipParts[i] ^ net;
       hostParts.push(host); 
     }
   
