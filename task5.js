@@ -1,13 +1,39 @@
-function findMissing(list) {  
+function primeFactors(n){
+  let result = "";
   
-  let step = (list[list.length - 1] - list[0]) / list.length;
-  
-  for (let i = 0; i<list.length - 1;i++)
+  for (let p = 2; p*p<=n; p++)
     {
-      if(list[i+1] - list[i] !== step)
+      let count = 0;
+      
+      while (n % p === 0)
         {
-          return list[i] + step;
+          n /= p;
+          
+          count ++;
         }
+      
+      if (count > 0)
+        {
+          let text = `(${p}`;
+          
+          if (count > 1)
+            {
+              text += `**${count}`;
+            } 
+          
+          text = text + ")";
+          
+          result = result + text;
+        }
+      
+      
     }
   
+  if (n>1)
+    {
+      result = result + `(${n})`;
+    }
+  
+  return result;
+    //your code here
 }
