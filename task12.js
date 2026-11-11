@@ -1,5 +1,5 @@
 function longest(arr, n) {
-  let sorted = arr.slice().sort((a,b) =>   // копираваие и сортировка 
+  let sorted = arr.slice().sort((a,b) => 
                                 {
     if(b.length !== a.length)
       {
